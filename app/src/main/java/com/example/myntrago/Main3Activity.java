@@ -19,9 +19,9 @@ public class Main3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
         Bundle extras=getIntent().getExtras();
         int i=extras.getInt("Key1");
-        TextView v = (TextView) findViewById(R.id.textview);
-        TextView p=(TextView)findViewById(R.id.textview3);
-        TextView n=(TextView)findViewById(R.id.textview4);
+        TextView pro = (TextView) findViewById(R.id.promocode);
+        TextView n=(TextView)findViewById(R.id.name);
+        TextView va=(TextView)findViewById(R.id.valid);
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
         List<String> val = databaseAccess.getValidity();
@@ -31,8 +31,8 @@ public class Main3Activity extends AppCompatActivity {
         databaseAccess.close();
 
 
-        v.setText(val.get(i));
-        p.setText(val.get(i));
+        pro.setText(prom.get(i));
+        va.setText(val.get(i));
         n.setText(name.get(i));
 
     }
